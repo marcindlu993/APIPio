@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
+using APIPio.Models;
 
 namespace APIPio.Models
 {
@@ -24,7 +26,10 @@ namespace APIPio.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
+        public DbSet<Project> projects { get; set; }
+        public DbSet<Employee> employees { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

@@ -57,7 +57,7 @@ namespace APIPio.Providers
                 context.AdditionalResponseParameters.Add(property.Key, property.Value);
             }
 
-            return Task.FromResult<object>(null);
+            return System.Threading.Tasks.Task.FromResult<object>(null);
         }
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -68,7 +68,7 @@ namespace APIPio.Providers
                 context.Validated();
             }
 
-            return Task.FromResult<object>(null);
+            return System.Threading.Tasks.Task.FromResult<object>(null);
         }
 
         public override Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
@@ -83,7 +83,7 @@ namespace APIPio.Providers
                 }
             }
 
-            return Task.FromResult<object>(null);
+            return System.Threading.Tasks.Task.FromResult<object>(null);
         }
 
         public static AuthenticationProperties CreateProperties(string userName)

@@ -110,6 +110,21 @@ namespace APIPio.Controllers
             return Ok(employee);
         }
 
+        [Route("api/Employees/SetFlag/{id}")]
+        public async Task<IHttpActionResult> SetFlag(int id)
+        {
+            Employee employee = await _db.employees.FindAsync(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            _db.employees.Find(id).IsActive = !_db.employees.Find(id).IsActive;
+            await _db.SaveChangesAsync();
+
+            return Ok();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -28,7 +28,7 @@ namespace APIPio.Controllers
         // GET: api/Projects
         public IQueryable<Project> Gettasks()
         {
-            return _db.projects;
+            return _db.projects.Where(x => x.IsActive == true);
         }
 
         // GET: api/Projects/5
@@ -86,6 +86,7 @@ namespace APIPio.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            project.IsActive = true;
             _db.projects.Add(project);
             await _db.SaveChangesAsync();
 

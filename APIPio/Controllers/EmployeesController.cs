@@ -27,7 +27,7 @@ namespace APIPio.Controllers
         // GET: api/Employees
         public IEnumerable<Employee> Getemployees()
         {
-            return _db.employees.ToList();
+            return _db.employees.Where(x => x.IsActive == true).ToList();
         }
 
         // GET: api/Employees/5
@@ -87,6 +87,7 @@ namespace APIPio.Controllers
                 return BadRequest(ModelState);
             }
 
+            employee.IsActive = true;
             _db.employees.Add(employee);
             await _db.SaveChangesAsync();
 

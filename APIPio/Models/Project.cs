@@ -11,7 +11,7 @@ namespace APIPio.Models
         [Key]
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndTime { get; set; }
+        public DateTime EndDate { get; set; }
         public DateTime LastModifyDate { get; set; }
         public string Name { get; set; }
         public string Comment { get; set; }

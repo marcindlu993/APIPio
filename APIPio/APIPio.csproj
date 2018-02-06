@@ -287,6 +287,10 @@
     <Compile Include="Migrations\201802051412339_refactorProjectsv2.Designer.cs">
       <DependentUpon>201802051412339_refactorProjectsv2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802061429162_refactorName.cs" />
+    <Compile Include="Migrations\201802061429162_refactorName.Designer.cs">
+      <DependentUpon>201802061429162_refactorName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802051412339_refactorProjectsv2.resx">
       <DependentUpon>201802051412339_refactorProjectsv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802061429162_refactorName.resx">
+      <DependentUpon>201802061429162_refactorName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

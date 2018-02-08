@@ -29,6 +29,8 @@ namespace APIPio.Models
 
         public DbSet<Project> projects { get; set; }
         public DbSet<Employee> employees { get; set; }
+        public DbSet<Comment> comments { get; set; }
+        public DbSet<TaskData> taskDatas  { get; set; }
 
         public static ApplicationDbContext Create()
         {

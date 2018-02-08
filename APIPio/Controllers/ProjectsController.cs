@@ -53,7 +53,7 @@ namespace APIPio.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != project.Id)
+            if (id != project.ProjectId)
             {
                 return BadRequest();
             }
@@ -90,7 +90,7 @@ namespace APIPio.Controllers
             _db.projects.Add(project);
             await _db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = project.Id }, project);
+            return CreatedAtRoute("DefaultApi", new { id = project.ProjectId }, project);
         }
 
         // DELETE: api/Projects/5
@@ -135,7 +135,7 @@ namespace APIPio.Controllers
 
         private bool ProjectExists(int id)
         {
-            return _db.projects.Count(e => e.Id == id) > 0;
+            return _db.projects.Count(e => e.ProjectId == id) > 0;
         }
     }
 }

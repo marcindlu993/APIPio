@@ -52,7 +52,7 @@ namespace APIPio.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != employee.Id)
+            if (id != employee.EmployeeId)
             {
                 return BadRequest();
             }
@@ -91,7 +91,7 @@ namespace APIPio.Controllers
             _db.employees.Add(employee);
             await _db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = employee.Id }, employee);
+            return CreatedAtRoute("DefaultApi", new { id = employee.EmployeeId }, employee);
         }
 
         // DELETE: api/Employees/5
@@ -136,7 +136,7 @@ namespace APIPio.Controllers
 
         private bool EmployeeExists(int id)
         {
-            return _db.employees.Count(e => e.Id == id) > 0;
+            return _db.employees.Count(e => e.EmployeeId == id) > 0;
         }
     }
 }

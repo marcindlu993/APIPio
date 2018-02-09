@@ -15,6 +15,7 @@ using System.Web.Http.Cors;
 namespace APIPio.Controllers
 {
     [EnableCors("*", "*", "*")]
+    [Authorize]
     public class ProjectsController : ApiController
     {
         private ApplicationDbContext _db;
